@@ -1,2 +1,4 @@
+ipykernel
+notebook
 pandas
 matplotlib
