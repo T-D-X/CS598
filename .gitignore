@@ -1,2 +1,3 @@
 .venv/
-data/climate_data/
+.DS_Store
+# data/climate_data/
