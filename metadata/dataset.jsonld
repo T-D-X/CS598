@@ -35,6 +35,18 @@
     },
     {
       "@type": "PropertyValue",
+      "name": "Average TMAX",
+      "unitText": "°C",
+      "description": "Annual mean of daily maximum temperature monthly means across Iowa GHCND stations"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Average TMIN",
+      "unitText": "°C",
+      "description": "Annual mean of daily minimum temperature monthly means across Iowa GHCND stations"
+    },
+    {
+      "@type": "PropertyValue",
       "name": "Yield",
       "unitText": "bushels/acre",
       "description": "Annual corn grain yield per acre for Iowa"
@@ -43,10 +55,10 @@
   "distribution": [
     {
       "@type": "DataDownload",
-      "name": "Processed climate data (annual average temperature for the month of June, July, August)",
+      "name": "Processed climate data (annual averages for June, July, August)",
       "contentUrl": "data/climate_data/processed/ghcnd-IA-data.csv",
       "encodingFormat": "text/csv",
-      "description": "Average temperature across Iowa GHCND stations for the month of June, July, August per year"
+      "description": "Annual averages across Iowa GHCND stations: Average Temperature, Average TMAX, Average TMIN for June–August"
     },
     {
       "@type": "DataDownload",
@@ -73,6 +85,10 @@
   "isBasedOn": [
     "https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily",
     "https://quickstats.nass.usda.gov/"
+  ],
+  "citation": [
+    "Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: Global Historical Climatology Network - Daily (GHCN-Daily), Version 3. NOAA National Climatic Data Center. DOI:10.7289/V5D21VHZ. Accessed 2025-12-09.",
+    "USDA National Agricultural Statistics Service, QuickStats Database. Accessed 2025-12-09."
   ],
   "provenance": "See metadata/provenance.md for processing steps.",
   "dateModified": "2025-12-09"

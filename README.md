@@ -30,9 +30,13 @@ This project is mainly contained in `climate_crop_study.ipynb` and does the foll
 ## Data locations and downloads
 - Climate data
   - Raw: `data/climate_data/raw_data/ghcnd-stations.txt` (station metadata from NOAA GHCND).
-  - Processed: `data/climate_data/processed/ghcnd-IA-data.csv` (annual average temperatures for Iowa).
+  - Processed: `data/climate_data/processed/ghcnd-IA-data.csv` (annual averages for Iowa with columns: `YEAR`, `Average Temperature`, `Average TMAX`, `Average TMIN`; computed from daily TMAX/TMIN, ignoring `-9999`).
   - To refresh: download Iowa station/daily data from NOAA GHCND (https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily), filter to Iowa stations, or delete the existing data from this repository before running the notebook.
 - Crop data
   - Raw: `data/crop_data/raw_data/corn.csv` (USDA NASS QuickStats export for Iowa corn).
   - Processed: `data/crop_data/processed/crop.csv` (cleaned yearly yields).
   - To refresh: request an updated CSV from USDA NASS QuickStats (https://quickstats.nass.usda.gov/) using filters such as State = IOWA, Commodity = CORN, Data Item = CORN, GRAIN - YIELD, Program = SURVEY.
+
+## Data citations
+- NOAA NCEI GHCN-Daily: Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: Global Historical Climatology Network - Daily (GHCN-Daily), Version 3. NOAA National Climatic Data Center. DOI:10.7289/V5D21VHZ. Accessed <date>.
+- USDA National Agricultural Statistics Service (QuickStats): USDA NASS QuickStats Database. Accessed <date>. Include the access date you retrieved the corn yield data.

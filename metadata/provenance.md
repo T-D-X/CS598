@@ -9,10 +9,11 @@ This document summarizes how raw data are obtained and transformed into the proc
 ## Processing steps
 ### Climate data (`data/climate_data/processed/ghcnd-IA-data.csv`)
 - Retrieve Iowa GHCND station data (daily observations).
-- Filter to Iowa stations and relevant temperature variables.
-- Convert measurements to degrees Celsius if needed (GHCND stores temperature in tenths of °C).
-- Aggregate to annual mean temperature per station, then aggregate across stations to a statewide annual mean.
-- Save as two-column CSV: `YEAR`, `Average Temperature`.
+- Filter to Iowa stations and TMAX/TMIN.
+- Parse daily values per month, drop missing sentinel `-9999`, and compute monthly means in °C (daily tenths °C ÷ 10).
+- Compute station-level TMAX/TMIN monthly means, then TAVG = (TMAX + TMIN) / 2.
+- Aggregate across stations to annual means for each metric and round to 1 decimal place.
+- Save columns: `YEAR`, `Average Temperature`, `Average TMAX`, `Average TMIN`.
 
 ### Crop data (`data/crop_data/raw_data/corn.csv` -> `data/crop_data/processed/crop.csv`)
 - Download QuickStats CSV for corn with filters such as: State=IOWA, Commodity=CORN, Data Item=CORN, GRAIN - YIELD, Program=SURVEY.
@@ -32,3 +33,7 @@ This document summarizes how raw data are obtained and transformed into the proc
 ## Notes
 - Document download dates and exact API queries when refreshing data to preserve lineage.
 - Update `metadata/dataset.jsonld` and this file whenever processing logic or sources change.
+
+## Data citations
+- NOAA NCEI GHCN-Daily: Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: Global Historical Climatology Network - Daily (GHCN-Daily), Version 3. NOAA National Climatic Data Center. DOI:10.7289/V5D21VHZ. Accessed <date>.
+- USDA National Agricultural Statistics Service (QuickStats): USDA NASS QuickStats Database. Accessed <date>. Include the date the corn yield data were retrieved.
