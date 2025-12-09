@@ -1,0 +1,79 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Climate and Crop Study (Iowa)",
+  "description": "Annual Iowa climate (NOAA GHCND) and corn yield (USDA NASS QuickStats) data used to explore relationships between temperature trends and agricultural outputs.",
+  "identifier": "climate-crop-study",
+  "url": "https://github.com/T-D-X/CS598",
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Tan Dong Xiang"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Organization",
+      "name": "NOAA National Centers for Environmental Information (GHCND)"
+    },
+    {
+      "@type": "Organization",
+      "name": "USDA National Agricultural Statistics Service (QuickStats)"
+    }
+  ],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Iowa, USA"
+  },
+  "temporalCoverage": "1866-01-01/2025-12-31",
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "Average Temperature",
+      "unitText": "°C",
+      "description": "Annual mean temperature across Iowa GHCND stations"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Yield",
+      "unitText": "bushels/acre",
+      "description": "Annual corn grain yield per acre for Iowa"
+    }
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Processed climate data (annual average temperature for the month of June, July, August)",
+      "contentUrl": "data/climate_data/processed/ghcnd-IA-data.csv",
+      "encodingFormat": "text/csv",
+      "description": "Average temperature across Iowa GHCND stations for the month of June, July, August per year"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Processed crop data (corn yield)",
+      "contentUrl": "data/crop_data/processed/crop.csv",
+      "encodingFormat": "text/csv",
+      "description": "Annual corn yield for Iowa in bushels per acre"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Merged climate and yield data",
+      "contentUrl": "data/merged/crop_yield_and_temperature.csv",
+      "encodingFormat": "text/csv",
+      "description": "Merged annual dataset with YEAR, Yield (bushels/acre), and Average Temperature (°C)"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Raw crop data (USDA QuickStats export)",
+      "contentUrl": "data/crop_data/raw_data/corn.csv",
+      "encodingFormat": "text/csv",
+      "description": "USDA NASS QuickStats export for Iowa corn"
+    }
+  ],
+  "isBasedOn": [
+    "https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily",
+    "https://quickstats.nass.usda.gov/"
+  ],
+  "provenance": "See metadata/provenance.md for processing steps.",
+  "dateModified": "2025-12-09"
+}
